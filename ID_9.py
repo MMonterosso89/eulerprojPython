@@ -6,16 +6,48 @@
 #There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 #Find the product abc.
 import math
+import sympy
 
-def find_pytrips(c_square=1000):
+def find_pytrips(c_square=1000**2):
     b_ceiling = math.floor(math.sqrt(c_square))
     #start b high, a low?
     a=1
-    while a**2 + b_ceiling**2 != c_square:
-        print(f'{a} squared and {b_ceiling} squared do not equal {c_square}')
-        #not all combinations -  need double loop or check cartesian prod table
-        b_ceiling-=1
-        a+=1
-        if b_ceiling == 0:
-            break
-    return a,b_ceiling
+    for i in range(b_ceiling,1,-1):
+        for j in range(a,b_ceiling):
+            if i**2 + j**2 == c_square and:
+                print(f'{i} squared and {j} squared equal {c_square}')
+                break
+
+##Understood entire question wrong - restart
+def pytrip_prod(seekval=1000):
+    b_ceiling = math.floor(math.sqrt(seekval**2))
+    #start b high, a low?
+    a=1
+    for i in range(b_ceiling,1,-1):
+        for j in range(a,b_ceiling):
+            if i+j+math.sqrt(i**2+j**2) == seekval:
+                return i*j*(1000-(i+j))
+#Correct!
+#Not sure if this works?
+import sympy as sp
+a = sp.symbols("a")
+b = sp.symbols("b")
+c = sp.symbols("c")
+
+f = a**2+b**2
+
+sp.solve(f,a)
+
+
+#GPT Solution
+def find_pythagorean_triplet():
+    for a in range(1, 1000):
+        for b in range(a, 1000):
+            c = 1000 - a - b
+            if a**2 + b**2 == c**2:
+                return a * b * c
+
+result = find_pythagorean_triplet()
+print(f"The product of the Pythagorean triplet (a, b, c) for which a + b + c = 1000 is: {result}")
+
+#Wow

@@ -1,1 +1,3 @@
 I tackled a few of these problems a couple of years back in R. Here I am going to attempt to tackle them with python and then ask GPT4 for a solution after having solved it myself for learning purposes. Unless truly stuck for more than a day or having no clue where to start even after research, I will not ask GPT first. I'm expecting my solution to be less elegant and or performant compared to GPT's answer, which is where learning will occur.
+
+*I have some harder questions after the initial 100 solved, but per the instructions I will not post them publicly. Please inquire if interested in these solutions.*

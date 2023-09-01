@@ -21,16 +21,33 @@ def count_divisors(n):
     return count
 
 
-def check_divisors(dict):
+def check_divisors(entry_dict):
     divisor_dict = {}
-    for entry in dict.keys(): 
-        divisor_dict[entry] = count_divisors(dict[entry])
+    for value in entry_dict.values(): 
+        divisor_dict[value] = count_divisors(value)
     return divisor_dict
 
 
-max_key = max(divisors, key=lambda k: divisors[k]) # we have found it somewhere
+#max_key = max(divisors, key=lambda k: divisors[k]) # we have found it somewhere
 
 def search_divisors(div_dict):
     for entry in div_dict.keys(): 
         if div_dict[entry] > 501:
             print(f'large divisor entry found at triangle number {entry} with {div_dict[entry]} total divisors')
+            break
+
+
+#
+
+trinums = triangle_number(20000)
+
+divisors = check_divisors(trinums)
+
+search_divisors(divisors)
+
+#12375 - incorrect?
+
+count_divisors(12375)
+
+#7479: 192
+count_divisors(7479)

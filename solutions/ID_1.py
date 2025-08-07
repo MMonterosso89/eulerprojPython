@@ -6,16 +6,11 @@
 
 #My Solution
 
-import typing
-
-def three_five_divis_total(maxnum:int):
-    divis = []
-    for i in range(0,maxnum+1):
-        if i % 3 == 0:
-            divis.append(i)
-        elif i % 5 == 0:
-            divis.append(i)
-    return sum(divis)
+def three_five_divis_total(limit:int):
+    """
+    Find the sum of all the multiples of 3 or 5 below a given limit.
+    """
+    return sum(i for i in range(limit) if i % 3 == 0 or i % 5 == 0)
 
 ##CORRECT ANSWER - make note to use 999 not 1000 in function
 
